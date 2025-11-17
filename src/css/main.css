@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img,
+video {
+  display: block;
+}
+h1 {
+  color: red;
+}
+body,
+html {
+  color: inherit;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Texture par-dessus */
+.texture {
+  position: fixed;
+  inset: 0;
+  pointer-events: none; /* pour ne rien bloquer */
+
+  background-image: url("../img/194.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 20;
+  mix-blend-mode: difference; /* le mode que tu veux */
+  z-index: 9999; /* au-dessus de tout */
+}
