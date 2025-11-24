@@ -76,7 +76,11 @@ html {
   max-width: 1400px;
   pointer-events: auto;
   z-index: 3;
-  transition: filter 0.3s;
+  transition: filter 0.2s;
+  transition: transform 0.1s; /* rend le mouvement fluide */
+  transform-style: preserve-3d; /* pour le 3D */
+  will-change: transform;
+  cursor: pointer;
 }
 
 /* Texture par-dessus */
@@ -110,15 +114,12 @@ html {
   z-index: 1;
 }
 .halo {
-  position: absolute;
+  position: fixed; /* suit la souris sur toute la page */
   pointer-events: none;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background: rgba(255, 255, 200, 0.5);
-  filter: blur(60px);
+  width: 200px; /* taille de l'image halo */
+  height: auto;
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 0.2s;
-  z-index: 0;
+  z-index: 4;
 }
