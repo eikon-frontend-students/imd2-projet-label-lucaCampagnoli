@@ -1,4 +1,4 @@
-document.querySelectorAll(".title-img-wrapper").forEach((img) => {
+document.querySelectorAll(".title-img").forEach((img) => {
   img.addEventListener("mousemove", (e) => {
     const rect = img.getBoundingClientRect();
     const x = e.clientX - rect.left;
