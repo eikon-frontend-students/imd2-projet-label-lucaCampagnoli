@@ -1,16 +1,35 @@
+@font-face {
+  font-family: "Plateia";
+  src: url("../fonts/Plateia-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GTFRiposte";
+  src: url("../fonts/GTFRiposteTRIAL-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Plateia", sans-serif;
+}
 * {
   cursor: url("../img/Union.png"), auto;
 }
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.logo {
+display: flex;
+flex-direction: column;
+align-items: center;
+  position: fixed
+  z-index: -1;
+  transition: color 0.5s ease-in-out, filter 0.3s ease;
 }
 
-.logo {
-  position: fixed
-  width: 80; /* adapte selon ton PNG */
-  z-index: -1;
+.logo:hover {
+  filter: brightness(1.7);
+  mix-blend-mode: difference;
+  z-index: 3;
 }
 /* Texture par-dessus */
 .texture {
@@ -58,31 +77,57 @@
   mix-blend-mode: lighten; /* <<< effet diff */
 }
 .titre {
-  background-image: url("../img/Titre.png");
-  position: absolute;
-  top: 25vw;
-  left: 30px; /* remplace margin-left */
-  right: 30px; /* remplace margin-right */
-  width: auto; /* laisse le container s’adapter */
-  height: 60%;
+  width: 98vw; /* laisse le container s’adapter */
   z-index: 3;
-  background-size: contain;
-  background-position: center top;
-  background-repeat: no-repeat;
-  pointer-events: none;
 }
 @media (min-width: 1900px) {
   .titre {
     left: 60px;
     right: 60px;
   }
+  .first {
+    width: 1000px;
+  }
 }
 
 .first {
+  color: #aeada9;
+  width: 769px;
+  text-align: right;
+  margin: 0%;
+  mix-blend-mode: color-dodge;
+  z-index: 3;
+  transition: color 0.8s ease-in-out, filter 0.2s ease-in-out;
+}
+.first:hover {
+  color: #ffffff;
+  filter: brightness(1.2);
+  mix-blend-mode: normal;
+}
+
+.second {
+  color: #aeada9;
+  width: 774px;
+  text-align: left;
+  margin: 0%;
+  font-family: "GTFRiposte";
+  font-size: 20;
+  mix-blend-mode: color-dodge;
+  z-index: 3;
+}
+
+.info {
   display: flex;
   flex-direction: column;
-  align-items: right;
-  color: white;
-  font-family: Arial, sans-serif;
-  z-index: 3;
+  align-items: end;
+  margin-top: 18vh;
+  width: 100vw;
+  gap: 8px;
+}
+.lunettes {
+  display: flex;
+  flex-direction: row;
+  align-items: ;
+mix-blend-mode: difference;
+z-index: 4;
 }
