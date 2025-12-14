@@ -1,3 +1,17 @@
+* {
+  cursor: url("../img/Union.png"), auto;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  position: fixed
+  width: 80; /* adapte selon ton PNG */
+  z-index: -1;
+}
 /* Texture par-dessus */
 .texture {
   position: fixed; /* <<< scroll */
@@ -5,16 +19,17 @@
   left: 0;
   width: 100vw;
   height: 200%;
-  background-image: url("../img/194.jpg");
+  background-image: url("../img/text_p_2.png");
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
   pointer-events: none;
+  mix-blend-mode: screen; /* <<< effet diff */
 }
 
-/* Effet difference qui scroll aussi */
+/* 
 .bg-diff {
-  position: absolute; /* <<< scroll */
+  position: absolute;
   top: 0;
   left: 50vw;
   width: 50vw;
@@ -23,10 +38,11 @@
   background-size: content;
   background-position: left;
   background-repeat: no-repeat;
-  mix-blend-mode: difference; /* <<< effet diff */
+  mix-blend-mode: difference; 
   pointer-events: none;
   z-index: 4;
 }
+*/
 .travis-dos {
   background-image: url("../img/Travis_Dos.png");
   position: absolute; /* <<< scroll */
@@ -35,21 +51,38 @@
   width: 100vw;
   height: 100vh;
   z-index: 1;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   pointer-events: none;
+  mix-blend-mode: lighten; /* <<< effet diff */
 }
 .titre {
   background-image: url("../img/Titre.png");
-  position: absolute; /* <<< scroll */
-  top: auto;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  position: absolute;
+  top: 25vw;
+  left: 30px; /* remplace margin-left */
+  right: 30px; /* remplace margin-right */
+  width: auto; /* laisse le container s’adapter */
+  height: 60%;
   z-index: 3;
   background-size: contain;
-  background-position: center bottom;
+  background-position: center top;
   background-repeat: no-repeat;
   pointer-events: none;
+}
+@media (min-width: 1900px) {
+  .titre {
+    left: 60px;
+    right: 60px;
+  }
+}
+
+.first {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  color: white;
+  font-family: Arial, sans-serif;
+  z-index: 3;
 }
