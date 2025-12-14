@@ -161,6 +161,7 @@ align-items: center;
   position: absolute;
   max-width: 50vw;
   mix-blend-mode: difference;
+  transition: transform 0.2s ease; /* plus long pour sortie smooth */
 }
 
 .diff-wrap img:first-child {
@@ -182,13 +183,15 @@ align-items: center;
 h1 {
   text-align: center;
     font-size: clamp(40px, 2vw, 40px);
-
+    padding-bottom: 8vh;
 }
+
 
 .block h1 {
   margin-bottom: 2vh;
   font-size: clamp(40px, 2vw, 40px);
   text-align: center;
+  padding-bottom: 0px;
 
 }
 
@@ -200,7 +203,13 @@ h1 {
 
 .albums img {
   width: 100%;
-
+}
+.block.albums-block {
+  margin-top: 40px;
+}
+.block.events h1{
+  margin: 0%;
+  padding-bottom: 17px;
 }
 .paragraphs {
   display: flex;
@@ -214,4 +223,46 @@ p{
   justify-content: center;
   text-align: center;
   margin: 0px;
+}
+@media (min-width: 1900px) {
+  .paragraphs {
+font-size: 30px;
+  }
+  .first {
+    width: 1000px;
+  }
+}
+@media (max-width: 1000px) {
+.albums img {
+  width: 50%;
+}
+  .first {
+    width: 1000px;
+  }
+}
+.albums img {
+  filter: brightness(0.2) saturate(0); /* exposition + contraste */
+  width: 100%;
+  transition: 0.5s ease-in-out; /* pour que l'effet soit fluide */
+    transform-style: preserve-3d;
+}
+
+.albums img:hover {
+  filter: brightness(1) contrast(1);
+  /* plus de transform ici, le JS gère rotation + zoom */
+}
+.albums, .diff-wrap {
+  perspective: 1000px; /* perspective pour effet 3D */
+}
+
+.albums img {
+  width: 100%;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  transform-style: preserve-3d;
+  filter: brightness(0.2) saturate(0);
+}
+
+.albums img:hover {
+  filter: brightness(1) contrast(1);
+  /* plus de transform ici, JS gère rotation + zoom */
 }
