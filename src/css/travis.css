@@ -211,11 +211,13 @@ h1 {
   margin: 0%;
   padding-bottom: 17px;
 }
-.paragraphs {
+.text-block {
   display: flex;
   flex-direction: column;
   gap: 10px;
   font-size: 24;
+
+  
 
 }
 p{
@@ -223,9 +225,10 @@ p{
   justify-content: center;
   text-align: center;
   margin: 0px;
+    transition: 0.2s ease-in-out;
 }
 @media (min-width: 1900px) {
-  .paragraphs {
+  .text-block {
 font-size: 30px;
   }
   .first {
@@ -265,4 +268,12 @@ font-size: 30px;
 .albums img:hover {
   filter: brightness(1) contrast(1);
   /* plus de transform ici, JS gère rotation + zoom */
+}
+.text-block p:hover {
+  filter: brightness(1.9);
+  letter-spacing: 3px;
+}
+
+.char {
+  will-change: transform;
 }
