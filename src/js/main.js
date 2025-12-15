@@ -39,3 +39,19 @@ imgs.forEach((img) => {
     img.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
   });
 });
+
+const loading = document.getElementById("loading");
+const content = document.getElementById("content");
+
+window.addEventListener("load", () => {
+  // laisser le loading visible 2 secondes
+  setTimeout(() => {
+    loading.classList.remove("show"); // fade-out
+
+    setTimeout(() => {
+      loading.style.display = "none"; // masquer loading
+      content.style.display = "block"; // montrer contenu
+      content.classList.add("show"); // fade-in
+    }, 600); // durée du fade CSS
+  }, 2000); // durée du loading
+});

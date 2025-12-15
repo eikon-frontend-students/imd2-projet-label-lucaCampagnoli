@@ -1,6 +1,12 @@
 * {
   cursor: url("../img/Union.png"), auto;
 }
+/* Curseur quand on survole un élément cliquable */
+a,
+button,
+.clickable {
+  cursor: url("../img/Union2.png"), pointer;
+}
 @font-face {
   font-family: "Plateia";
   src: url("../fonts/Plateia-Bold.ttf") format("truetype");
@@ -106,6 +112,7 @@ html {
   width: 100%;
   max-width: 1400px;
   display: block;
+  cursor: url("../img/Union2.png"), auto;
 }
 
 /* Texture par-dessus */
@@ -164,10 +171,10 @@ html {
 
 @keyframes flashOut {
   0% {
-    filter: brightness(90);
+    filter: brightness(100);
   }
   50% {
-    filter: brightness(80);
+    filter: brightness(100);
   }
   100% {
     filter: brightness(70);

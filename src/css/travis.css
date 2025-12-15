@@ -19,6 +19,12 @@ body {
 * {
   cursor: url("../img/Union.png"), auto;
 }
+/* Curseur quand on survole un élément cliquable */
+a,
+button,
+.clickable {
+  cursor: url("../img/Union2.png"), pointer;
+}
 .logo {
 display: flex;
 flex-direction: column;
