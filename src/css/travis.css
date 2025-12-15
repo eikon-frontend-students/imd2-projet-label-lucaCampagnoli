@@ -63,6 +63,18 @@ align-items: center;
 .titre {
   width: 98vw; /* laisse le container s’adapter */
   z-index: 3;
+    animation: float 20s ease-in-out infinite alternate;
+}
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(-1deg);
+  }
+  50% {
+    transform: translate(-1px, 1px) rotate(1deg);
+  }
+  100% {
+    transform: translate(1px, -1px) rotate(-1deg);
+  }
 }
 @media (min-width: 1900px) {
   .titre {
@@ -129,6 +141,18 @@ align-items: center;
   display: flex;
   align-items: center;
   justify-content: center;
+    animation: float 16s ease-in-out infinite alternate;
+}
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(-1deg);
+  }
+  50% {
+    transform: translate(-0px, 0px) rotate(1deg);
+  }
+  100% {
+    transform: translate(3px, -3px) rotate(-1deg);
+  }
 }
 
 .lunettes {
@@ -137,7 +161,21 @@ align-items: center;
   object-fit: contain; /* PAS de déformation */
   mix-blend-mode: darken;
   z-index: 3;
+      animation: float 12s ease-in-out infinite alternate;
 }
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(-2deg);
+  }
+  50% {
+    transform: translate(-0px, 0px) rotate(1deg);
+  }
+  100% {
+    transform: translate(3px, -3px) rotate(-1deg);
+  }
+
+}
+
 .bg-diff {
   position: absolute;
   width: 50vw;
@@ -216,9 +254,10 @@ h1 {
   flex-direction: column;
   gap: 10px;
   font-size: 24;
-
-  
-
+  margin-bottom: 20px;
+}
+.more{
+  font-size: 30px;
 }
 p{
   align-items: center;
