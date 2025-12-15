@@ -1,7 +1,23 @@
 * {
   cursor: url("../img/Union.png"), auto;
 }
-
+@font-face {
+  font-family: "Plateia";
+  src: url("../fonts/Plateia-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GTFRiposte";
+  src: url("../fonts/GTFRiposteTRIAL-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: "Plateia", sans-serif;
+  color: #aeada9;
+  overflow-x: hidden;
+}
 img,
 video {
   display: block;
@@ -15,7 +31,6 @@ html {
   padding: 0;
   height: 100%;
   background: black;
-  font-family: Arial, sans-serif;
 }
 
 /* --- HEADER --- */
@@ -158,19 +173,34 @@ html {
     filter: brightness(70);
   }
 }
-
-.page-transition {
-  position: fixed;
-  inset: 0;
-  background: #000;
+/* Transition fade */
+.fade {
   opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.9s cubic-bezier(0.77, 0, 0.18, 1);
+  transition: opacity 0.6s ease;
+}
 
+.fade.show {
+  opacity: 1;
+}
+
+/* Loading et contenu */
+#loading,
+#content {
+  /* #loading couvre tout l’écran */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000000; /* pour loading */
   z-index: 9999;
 }
 
-.page-transition.active {
-  opacity: 1;
-  pointer-events: all;
+#content {
+  position: relative;
+  background: #fff; /* ou ce que tu veux pour ton contenu */
+  display: none; /* caché au départ */
 }

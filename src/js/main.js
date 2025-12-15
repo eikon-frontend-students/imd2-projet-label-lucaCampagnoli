@@ -39,28 +39,3 @@ imgs.forEach((img) => {
     img.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
   });
 });
-
-document.addEventListener("DOMContentLoaded", () => {
-  const transition = document.querySelector(".page-transition");
-
-  /* FADE IN (entrée page) */
-  requestAnimationFrame(() => {
-    transition.classList.remove("active");
-  });
-
-  /* FADE OUT (sortie page) */
-  document.querySelectorAll("a").forEach((link) => {
-    const href = link.getAttribute("href");
-
-    if (href && !href.startsWith("#") && !href.startsWith("http")) {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-        transition.classList.add("active");
-
-        setTimeout(() => {
-          window.location.href = href;
-        }, 600);
-      });
-    }
-  });
-});
