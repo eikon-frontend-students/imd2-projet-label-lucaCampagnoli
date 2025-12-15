@@ -10,10 +10,11 @@
   font-weight: normal;
   font-style: normal;
 }
-
 body {
   font-family: "Plateia", sans-serif;
     color: #aeada9;
+  overflow-x: hidden;
+
 }
 * {
   cursor: url("../img/Union.png"), auto;
@@ -94,6 +95,26 @@ align-items: center;
   mix-blend-mode: color-dodge;
   z-index: 3;
   transition: color 0.8s ease-in-out, filter 0.2s ease-in-out;
+
+  animation: float 10s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0% {
+    filter: brightness(0.8);
+    transform: translate(0, 0) rotate(-1deg);
+  }
+
+  50% {
+    filter: brightness(2);
+    transform: translate(0px, 0px) rotate(1deg);
+  }
+
+  100% {
+    filter: brightness(0.9);
+    transform: translate(3px, -3px) rotate(-1deg);
+  }
+
 }
 .first:hover {
   color: #ffffff;
@@ -119,6 +140,7 @@ align-items: center;
   margin-top: 18vh;
   width: 100vw;
   gap: 8px;
+
 }
 .split {
   display: flex;
@@ -136,6 +158,7 @@ align-items: center;
 }
 
 .visual {
+  position: relative;
   width: 50vw;
   min-height: 100vh;
   display: flex;
@@ -153,6 +176,46 @@ align-items: center;
   100% {
     transform: translate(3px, -3px) rotate(-1deg);
   }
+}
+.detail {
+  mix-blend-mode: difference;
+  position: absolute;
+  top: 500px;
+  left: 600px;
+  width: 67px;
+  z-index: 10;
+  animation: float 10s ease-in-out infinite alternate;
+}
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(-1deg);
+  }
+  50% {
+    transform: translate(-0px, 0px) rotate(1deg);
+  }
+  100% {
+    transform: translate(3px, -3px) rotate(-1deg);
+  }
+}
+.num {
+  top: 980px;
+  position: absolute;
+  mix-blend-mode: soft-light;
+width: 40vw;
+  object-fit: contain; /* PAS de déformation */
+  z-index: 10;
+  animation: float 15s ease-in-out infinite alternate;
+}
+.over {
+  mix-blend-mode: color-dodge;
+left: 180px;
+top: -180px;
+  position: absolute;
+  width: 85%;
+  height: 100%;
+  object-fit: contain; /* PAS de déformation */
+  z-index: 4;
+      animation: float 12s ease-in-out infinite alternate;
 }
 
 .lunettes {
@@ -175,7 +238,6 @@ align-items: center;
   }
 
 }
-
 .bg-diff {
   position: absolute;
   width: 50vw;
@@ -278,6 +340,9 @@ font-size: 30px;
 .albums img {
   width: 50%;
 }
+.albums {
+  width: 50%;
+}
   .first {
     width: 1000px;
   }
@@ -313,6 +378,3 @@ font-size: 30px;
   letter-spacing: 3px;
 }
 
-.char {
-  will-change: transform;
-}
